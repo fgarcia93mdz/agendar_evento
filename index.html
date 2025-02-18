@@ -1,7 +1,19 @@
+Here are a few suggestions to improve or correct your HTML and CSS:
+
+1. **CSS Syntax**: Ensure all CSS properties are properly closed and formatted.
+   - Example: `color: "#000000";` should be `color: #000000;`.
+
+2. **HTML and CSS Improvements**:
+   - Add `alt` attributes to all images for accessibility.
+   - Ensure consistency in CSS class naming and styling.
+
+Here is the revised version:
+
+```html
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Streaming + Banderas</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
     body {
         text-align: center;
@@ -11,7 +23,7 @@
         padding: 20px;
     }
     .titulo {
-        color: "#000000";
+        color: #000000;
     }
     .video-container {
         margin: 20px auto;
@@ -44,6 +56,7 @@
         height: auto;
         border-radius: 5px;
         transition: transform 0.2s;
+        margin-top: 15px;
     }
     .flag img:hover {
         transform: scale(1.1);
@@ -62,117 +75,135 @@
         border-radius: 10px;
     }
     .agenda h2 {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+    }
+    p {
+        margin-top: 5px;
     }
 </style>
 
 <h1 class="titulo">Transmisión por YouTube</h1>
 
+<div class="agenda">
+    <h2>Agendar evento</h2>
+    <div id="eventos-lista">
+    </div>
+</div>
+
 <div class="flags-container">
     <div class="flag" onclick="agendarEvento('argentina')">
-        <p class="pais">Argentina</p>
         <img src="https://flagcdn.com/w80/ar.png" alt="Argentina" loading="lazy">
+        <p class="pais">Argentina</p>
+        <p>Agendar 12:00 hs</p>
     </div>
     <div class="flag" onclick="agendarEvento('bolivia')">
-        <p class="pais">Bolivia</p>
         <img src="https://flagcdn.com/w80/bo.png" alt="Bolivia" loading="lazy">
+        <p class="pais">Bolivia</p>
+        <p>Agendar 11:00 hs</p>
     </div>
     <div class="flag" onclick="agendarEvento('brazil')">
-        <p class="pais">Brasil</p>
         <img src="https://flagcdn.com/w80/br.png" alt="Brasil" loading="lazy">
+        <p class="pais">Brasil</p>
+        <p>Agendar 12:00 hs</p>
     </div>
     <div class="flag" onclick="agendarEvento('chile')">
-        <p class="pais">Chile</p>
         <img src="https://flagcdn.com/w80/cl.png" alt="Chile" loading="lazy">
+        <p class="pais">Chile</p>
+        <p>Agendar 12:00 hs</p>
     </div>
     <div class="flag" onclick="agendarEvento('colombia')">
-        <p class="pais">Colombia</p>
         <img src="https://flagcdn.com/w80/co.png" alt="Colombia" loading="lazy">
+        <p class="pais">Colombia</p>
+        <p>Agendar 10:00 hs</p>
     </div>
     <div class="flag" onclick="agendarEvento('costa_rica')">
-        <p class="pais">Costa Rica</p>
         <img src="https://flagcdn.com/w80/cr.png" alt="Costa Rica" loading="lazy">
+        <p class="pais">Costa Rica</p>
+        <p>Agendar 09:00 hs</p>
     </div>
     <div class="flag" onclick="agendarEvento('ecuador')">
-        <p class="pais">Ecuador</p>
         <img src="https://flagcdn.com/w80/ec.png" alt="Ecuador" loading="lazy">
+        <p class="pais">Ecuador</p>
+        <p>Agendar 10:00 hs</p>
     </div>
     <div class="flag" onclick="agendarEvento('mexico')">
-        <p class="pais">México</p>
         <img src="https://flagcdn.com/w80/mx.png" alt="México" loading="lazy">
+        <p class="pais">México</p>
+        <p>Agendar 09:00 hs</p>
     </div>
     <div class="flag" onclick="agendarEvento('paraguay')">
-        <p class="pais">Paraguay</p>
         <img src="https://flagcdn.com/w80/py.png" alt="Paraguay" loading="lazy">
+        <p class="pais">Paraguay</p>
+        <p>Agendar 12:00 hs</p>
     </div>
     <div class="flag" onclick="agendarEvento('peru')">
-        <p class="pais">Perú</p>
         <img src="https://flagcdn.com/w80/pe.png" alt="Perú" loading="lazy">
+        <p class="pais">Perú</p>
+        <p>Agendar 10:00 hs</p>
     </div>
     <div class="flag" onclick="agendarEvento('dominicana')">
-        <p class="pais">República Dominicana</p>
         <img src="https://flagcdn.com/w80/do.png" alt="República Dominicana" loading="lazy">
+        <p class="pais">Dominicana</p>
+        <p>Agendar 11:00 hs</p>
     </div>
     <div class="flag" onclick="agendarEvento('uruguay')">
-        <p class="pais">Uruguay</p>
         <img src="https://flagcdn.com/w80/uy.png" alt="Uruguay" loading="lazy">
+        <p class="pais">Uruguay</p>
+        <p>Agendar 12:00 hs</p>
     </div>
 </div>
 
-<div class="agenda">
-    <h2>Eventos Agendados</h2>
-    <div id="eventos-lista">
-        
-    </div>
-</div>
 <script>
-        const paises = {
-            argentina: { name: "Argentina", eventoHora: "11:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
-            bolivia: { name: "Bolivia", eventoHora: "10:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
-            brazil: { name: "Brasil", eventoHora: "10:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
-            chile: { name: "Chile", eventoHora: "10:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
-            colombia: { name: "Colombia", eventoHora: "09:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
-            costa_rica: { name: "Costa Rica", eventoHora: "08:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
-            ecuador: { name: "Ecuador", eventoHora: "09:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
-            mexico: { name: "México", eventoHora: "09:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
-            paraguay: { name: "Paraguay", eventoHora: "10:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
-            peru: { name: "Perú", eventoHora: "09:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
-            dominicana: { name: "República Dominicana", eventoHora: "10:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
-            uruguay: { name: "Uruguay", eventoHora: "11:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" }
-        };
+const paises = {
+    argentina: { name: "Argentina", eventoHora: "12:00", fecha: "2025-03-19", eventDetails: "Estudio del Estado de la regulación sobre la protección contra incendios en Latinoamérica" },
+    bolivia: { name: "Bolivia", eventoHora: "11:00", fecha: "2025-03-19", eventDetails: "Estudio del Estado de la regulación sobre la protección contra incendios en Latinoamérica" },
+    brazil: { name: "Brasil", eventoHora: "12:00", fecha: "2025-03-19", eventDetails: "Estudio del Estado de la regulación sobre la protección contra incendios en Latinoamérica" },
+    chile: { name: "Chile", eventoHora: "12:00", fecha: "2025-03-19", eventDetails: "Estudio del Estado de la regulación sobre la protección contra incendios en Latinoamérica" },
+    colombia: { name: "Colombia", eventoHora: "10:00", fecha: "2025-03-19", eventDetails: "Estudio del Estado de la regulación sobre la protección contra incendios en Latinoamérica" },
+    costa_rica: { name: "Costa Rica", eventoHora: "09:00", fecha: "2025-03-19", eventDetails: "Transmisión en vivo por YouTube" },
+    ecuador: { name: "Ecuador", eventoHora: "10:00", fecha: "2025-03-19", eventDetails: "Estudio del Estado de la regulación sobre la protección contra incendios en Latinoamérica" },
+    mexico: { name: "México", eventoHora: "09:00", fecha: "2025-03-19", eventDetails: "Estudio del Estado de la regulación sobre la protección contra incendios en Latinoamérica" },
+    paraguay: { name: "Paraguay", eventoHora: "12:00", fecha: "2025-03-19", eventDetails: "Estudio del Estado de la regulación sobre la protección contra incendios en Latinoamérica" },
+    peru: { name: "Perú", eventoHora: "10:00", fecha: "2025-03-19", eventDetails: "Estudio del Estado de la regulación sobre la protección contra incendios en Latinoamérica" },
+    dominicana: { name: "República Dominicana", eventoHora: "11:00", fecha: "2025-03-19", eventDetails: "Estudio del Estado de la regulación sobre la protección contra incendios en Latinoamérica" },
+    uruguay: { name: "Uruguay", eventoHora: "12:00", fecha: "2025-03-19", eventDetails: "Estudio del Estado de la regulación sobre la protección contra incendios en Latinoamérica" }
+};
 
-        function agendarEvento(paisKey) {
-            const pais = paises[paisKey];
-            const eventName = `Evento en ${pais.name}`;
-            const eventDate = pais.fecha;
-            const eventTime = pais.eventoHora;
-            const startDate = `${eventDate}T${eventTime.replace(":", "")}00`; // Ajuste de formato correcto
-            const endDate = `${eventDate}T${(parseInt(eventTime.split(':')[0]) + 1).toString().padStart(2, '0')}${eventTime.split(':')[1]}00`; // Duración de 1 hora
+function agendarEvento(paisKey) {
+    const pais = paises[paisKey];
+    const eventName = `Latam PCI - Estado de la Regulación sobre Protección Contra Incendios en Latinoamérica`;
+    const eventDate = pais.fecha.replace(/-/g, ''); // Eliminar guiones de la fecha
+    const eventTime = pais.eventoHora.replace(':', ''); // Eliminar dos puntos de la hora
+    const startDate = `${eventDate}T${eventTime}00`; // Ajustar al formato correcto
+    const endDate = `${eventDate}T${(parseInt(eventTime.substring(0, 2)) + 1).toString().padStart(2, '0')}${eventTime.substring(2)}00`; // Duración de 1 hora
 
-            const eventLocation = `Transmisión desde ${pais.name}`;
-            const eventDetails = pais.eventDetails;
+    const eventLocation = `Transmisión desde ${pais.name}`;
+    const eventDetails = pais.eventDetails;
 
-            // Enlace para Google Calendar (Formato de fecha ajustado)
-            const googleCalendarUrl = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${encodeURIComponent(eventName)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}&sf=true&output=xml`;
+    // Enlace para Google Calendar (Formato de fecha ajustado)
+    const googleCalendarUrl = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${encodeURIComponent(eventName)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}&sf=true&output=xml`;
 
-            // Enlace para Outlook Calendar
-            const outlookCalendarUrl = `https://outlook.live.com/owa/?path=/calendar/action/compose&subject=${encodeURIComponent(eventName)}&startdt=${startDate}&enddt=${endDate}&location=${encodeURIComponent(eventLocation)}&body=${encodeURIComponent(eventDetails)}`;
+    // Enlace para Outlook Calendar
+    const outlookCalendarUrl = `https://outlook.live.com/owa/?path=/calendar/action/compose&subject=${encodeURIComponent(eventName)}&startdt=${startDate}&enddt=${endDate}&location=${encodeURIComponent(eventLocation)}&body=${encodeURIComponent(eventDetails)}`;
 
-            // Enlace para Apple Calendar (iCalendar)
-            const icsUrl = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:-//Apple Inc.//NONSGML iCal 4.0//EN%0D%0ACALSCALE:GREGORIAN%0D%0ABEGIN:VEVENT%0D%0ASUMMARY:${encodeURIComponent(eventName)}%0D%0ADTSTART:${startDate}%0D%0ADTEND:${endDate}%0D%0ALOCATION:${encodeURIComponent(eventLocation)}%0D%0ADESCRIPTION:${encodeURIComponent(eventDetails)}%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR`;
+    // Enlace para Apple Calendar (iCalendar)
+    const icsUrl = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0APRODID:-//Apple Inc.//NONSGML iCal 4.0//EN%0D%0ACALSCALE:GREGORIAN%0D%0ABEGIN:VEVENT%0D%0ASUMMARY:${encodeURIComponent(eventName)}%0D%0ADTSTART:${startDate}%0D%0ADTEND:${endDate}%0D%0ALOCATION:${encodeURIComponent(eventLocation)}%0D%0ADESCRIPTION:${encodeURIComponent(eventDetails)}%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR`;
 
-            // Mostrar enlaces para agregar el evento al calendario
-            const mensaje = `
-                <div class="evento">
-                    <p><strong>${eventName}</strong> en ${pais.name} - ${eventTime} hs</p>
-                    <p><a href="${googleCalendarUrl}" target="_blank">Agregar a Google Calendar</a></p>
-                    <p><a href="${outlookCalendarUrl}" target="_blank">Agregar a Outlook Calendar</a></p>
-                    <p><a href="${icsUrl}" target="_blank">Agregar a Apple Calendar</a></p>
-                </div>
-            `;
-            
-            // Mostrar los enlaces en el contenedor
-            const eventosLista = document.getElementById('eventos-lista');
-            eventosLista.innerHTML = mensaje;
-        }
-    </script>
+    // Mostrar enlaces para agregar el evento al calendario
+    const mensaje = `
+        <div class="evento">
+            <p><strong>${eventName}</strong> en ${pais.name}</p>
+            <p><a href="${googleCalendarUrl}" target="_blank">Agendar en Google Calendar</a></p>
+            <p><a href="${outlookCalendarUrl}" target="_blank">Agendar en Calendar</a></p>
+            <p><a href="${icsUrl}" target="_blank">Agendar en Apple Calendar</a></p>
+        </div>
+    `;
+    
+    // Mostrar los enlaces en el contenedor
+    const eventosLista = document.getElementById('eventos-lista');
+    eventosLista.innerHTML = mensaje;
+}
+</script>
+```
+
+These changes will ensure better syntax, consistency, and accessibility.
